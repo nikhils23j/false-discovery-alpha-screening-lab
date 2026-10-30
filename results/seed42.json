@@ -1,0 +1,484 @@
+{
+  "experiment": {
+    "seed": 42,
+    "signal_scale": 1.0,
+    "days": 1200,
+    "train_days": 700,
+    "holdout_days": 500,
+    "assets": 12,
+    "candidates": 50,
+    "injected_signals": 5,
+    "block_days": 20,
+    "permutations": 499,
+    "false_discovery_rate_q": 0.05,
+    "data": "seeded synthetic factors and next-day returns; no live prices"
+  },
+  "summary": {
+    "detected_injected_signals": 5,
+    "missed_injected_signals": 0,
+    "false_discoveries": 0,
+    "bh_selected_count": 5,
+    "naive_top10_injected": 5,
+    "naive_top10_decoys": 5,
+    "target_met": true
+  },
+  "selected": [
+    "tanh(signal_1)",
+    "tanh(signal_2)",
+    "tanh(signal_3)",
+    "tanh(signal_4)",
+    "tanh(signal_5)"
+  ],
+  "candidates": [
+    {
+      "name": "tanh(signal_1)",
+      "injected": true,
+      "train_ic": 0.21191808191808198,
+      "holdout_directional_ic": 0.20753846153846134,
+      "block_permutation_p": 0.002,
+      "bh_selected": true,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(signal_2)",
+      "injected": true,
+      "train_ic": 0.21100899100899104,
+      "holdout_directional_ic": 0.17218181818181805,
+      "block_permutation_p": 0.002,
+      "bh_selected": true,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(signal_3)",
+      "injected": true,
+      "train_ic": 0.17610389610389604,
+      "holdout_directional_ic": 0.1472447552447553,
+      "block_permutation_p": 0.002,
+      "bh_selected": true,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(signal_4)",
+      "injected": true,
+      "train_ic": 0.14844155844155843,
+      "holdout_directional_ic": 0.16772027972027978,
+      "block_permutation_p": 0.002,
+      "bh_selected": true,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(signal_5)",
+      "injected": true,
+      "train_ic": 0.11126873126873131,
+      "holdout_directional_ic": 0.1448531468531469,
+      "block_permutation_p": 0.002,
+      "bh_selected": true,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(decoy_1)",
+      "injected": false,
+      "train_ic": -0.00074925074925075,
+      "holdout_directional_ic": -0.020587412587412604,
+      "block_permutation_p": 0.94,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_2)",
+      "injected": false,
+      "train_ic": 0.006343656343656356,
+      "holdout_directional_ic": 0.017230769230769223,
+      "block_permutation_p": 0.12,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_3)",
+      "injected": false,
+      "train_ic": -0.00606393606393606,
+      "holdout_directional_ic": 0.002727272727272728,
+      "block_permutation_p": 0.404,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_4)",
+      "injected": false,
+      "train_ic": 0.002447552447552449,
+      "holdout_directional_ic": -0.0014685314685314646,
+      "block_permutation_p": 0.544,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_5)",
+      "injected": false,
+      "train_ic": -0.00565434565434565,
+      "holdout_directional_ic": -0.007342657342657352,
+      "block_permutation_p": 0.74,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_6)",
+      "injected": false,
+      "train_ic": -0.0074025974025974115,
+      "holdout_directional_ic": 0.016867132867132886,
+      "block_permutation_p": 0.132,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_7)",
+      "injected": false,
+      "train_ic": -0.012967032967032957,
+      "holdout_directional_ic": 0.02412587412587414,
+      "block_permutation_p": 0.1,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_8)",
+      "injected": false,
+      "train_ic": 0.003696303696303704,
+      "holdout_directional_ic": -0.0033566433566433497,
+      "block_permutation_p": 0.56,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_9)",
+      "injected": false,
+      "train_ic": -0.011868131868131864,
+      "holdout_directional_ic": -0.00032167832167832253,
+      "block_permutation_p": 0.508,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_10)",
+      "injected": false,
+      "train_ic": -0.0006593406593406571,
+      "holdout_directional_ic": -0.0004615384615384658,
+      "block_permutation_p": 0.57,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_11)",
+      "injected": false,
+      "train_ic": 0.003636363636363639,
+      "holdout_directional_ic": -0.027986013986014004,
+      "block_permutation_p": 0.958,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_12)",
+      "injected": false,
+      "train_ic": 0.0011388611388611367,
+      "holdout_directional_ic": -0.022867132867132878,
+      "block_permutation_p": 0.96,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_13)",
+      "injected": false,
+      "train_ic": 0.010069930069930089,
+      "holdout_directional_ic": -0.02875524475524477,
+      "block_permutation_p": 0.988,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_14)",
+      "injected": false,
+      "train_ic": 0.005724275724275729,
+      "holdout_directional_ic": 0.008643356643356642,
+      "block_permutation_p": 0.326,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_15)",
+      "injected": false,
+      "train_ic": 0.012107892107892117,
+      "holdout_directional_ic": 0.00037762237762237704,
+      "block_permutation_p": 0.492,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_16)",
+      "injected": false,
+      "train_ic": -0.007232767232767234,
+      "holdout_directional_ic": 0.017748251748251766,
+      "block_permutation_p": 0.076,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_17)",
+      "injected": false,
+      "train_ic": -0.0038161838161838123,
+      "holdout_directional_ic": 0.0039020979020978975,
+      "block_permutation_p": 0.294,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_18)",
+      "injected": false,
+      "train_ic": 0.009900099900099898,
+      "holdout_directional_ic": -0.006615384615384615,
+      "block_permutation_p": 0.676,
+      "bh_selected": false,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(decoy_19)",
+      "injected": false,
+      "train_ic": 0.007272727272727279,
+      "holdout_directional_ic": 0.012797202797202797,
+      "block_permutation_p": 0.136,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_20)",
+      "injected": false,
+      "train_ic": 0.007612387612387617,
+      "holdout_directional_ic": -0.0016223776223776275,
+      "block_permutation_p": 0.466,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_21)",
+      "injected": false,
+      "train_ic": 0.013896103896103882,
+      "holdout_directional_ic": 0.020447552447552454,
+      "block_permutation_p": 0.02,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_22)",
+      "injected": false,
+      "train_ic": -0.00547452547452547,
+      "holdout_directional_ic": -0.003860139860139863,
+      "block_permutation_p": 0.622,
+      "bh_selected": false,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(decoy_23)",
+      "injected": false,
+      "train_ic": -0.005564435564435558,
+      "holdout_directional_ic": -0.01448951048951052,
+      "block_permutation_p": 0.886,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_24)",
+      "injected": false,
+      "train_ic": -0.008071928071928091,
+      "holdout_directional_ic": -0.008027972027972029,
+      "block_permutation_p": 0.676,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_25)",
+      "injected": false,
+      "train_ic": 0.00028971028971029464,
+      "holdout_directional_ic": 0.006321678321678316,
+      "block_permutation_p": 0.344,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_26)",
+      "injected": false,
+      "train_ic": 0.005414585414585411,
+      "holdout_directional_ic": -0.009692307692307684,
+      "block_permutation_p": 0.72,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_27)",
+      "injected": false,
+      "train_ic": -0.0007792207792207725,
+      "holdout_directional_ic": 0.015650349650349657,
+      "block_permutation_p": 0.092,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_28)",
+      "injected": false,
+      "train_ic": 0.010109890109890106,
+      "holdout_directional_ic": 0.01584615384615383,
+      "block_permutation_p": 0.086,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_29)",
+      "injected": false,
+      "train_ic": -0.0035364635364635434,
+      "holdout_directional_ic": 0.006265734265734265,
+      "block_permutation_p": 0.22,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_30)",
+      "injected": false,
+      "train_ic": -0.0012987012987013067,
+      "holdout_directional_ic": -0.0005174825174825119,
+      "block_permutation_p": 0.598,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_31)",
+      "injected": false,
+      "train_ic": -0.0035664335664335736,
+      "holdout_directional_ic": 0.0009930069930069998,
+      "block_permutation_p": 0.576,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_32)",
+      "injected": false,
+      "train_ic": 0.012647352647352665,
+      "holdout_directional_ic": -0.004573426573426584,
+      "block_permutation_p": 0.664,
+      "bh_selected": false,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(decoy_33)",
+      "injected": false,
+      "train_ic": -0.0007092907092907077,
+      "holdout_directional_ic": 0.0003356643356643443,
+      "block_permutation_p": 0.484,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_34)",
+      "injected": false,
+      "train_ic": -0.003796203796203799,
+      "holdout_directional_ic": 0.010951048951048958,
+      "block_permutation_p": 0.4,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_35)",
+      "injected": false,
+      "train_ic": 0.014105894105894107,
+      "holdout_directional_ic": -0.014475524475524467,
+      "block_permutation_p": 0.856,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_36)",
+      "injected": false,
+      "train_ic": 0.0003696303696303749,
+      "holdout_directional_ic": -0.013216783216783226,
+      "block_permutation_p": 0.802,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_37)",
+      "injected": false,
+      "train_ic": -0.009430569430569427,
+      "holdout_directional_ic": 0.004223776223776227,
+      "block_permutation_p": 0.398,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_38)",
+      "injected": false,
+      "train_ic": -0.017452547452547467,
+      "holdout_directional_ic": -0.009244755244755237,
+      "block_permutation_p": 0.766,
+      "bh_selected": false,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(decoy_39)",
+      "injected": false,
+      "train_ic": -0.0035964035964035877,
+      "holdout_directional_ic": -0.011930069930069932,
+      "block_permutation_p": 0.87,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_40)",
+      "injected": false,
+      "train_ic": 0.005984015984015982,
+      "holdout_directional_ic": -0.01233566433566434,
+      "block_permutation_p": 0.774,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_41)",
+      "injected": false,
+      "train_ic": -0.014705294705294707,
+      "holdout_directional_ic": 0.000839160839160854,
+      "block_permutation_p": 0.406,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_42)",
+      "injected": false,
+      "train_ic": 0.0015584415584415498,
+      "holdout_directional_ic": 0.004923076923076932,
+      "block_permutation_p": 0.372,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_43)",
+      "injected": false,
+      "train_ic": -0.014105894105894133,
+      "holdout_directional_ic": -0.02281118881118883,
+      "block_permutation_p": 0.942,
+      "bh_selected": false,
+      "naive_top10": false
+    },
+    {
+      "name": "tanh(decoy_44)",
+      "injected": false,
+      "train_ic": -0.03112887112887114,
+      "holdout_directional_ic": 0.006573426573426575,
+      "block_permutation_p": 0.294,
+      "bh_selected": false,
+      "naive_top10": true
+    },
+    {
+      "name": "tanh(decoy_45)",
+      "injected": false,
+      "train_ic": -0.005804195804195807,
+      "holdout_directional_ic": -0.008503496503496516,
+      "block_permutation_p": 0.656,
+      "bh_selected": false,
+      "naive_top10": false
+    }
+  ]
+}
