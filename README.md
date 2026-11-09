@@ -212,8 +212,7 @@ What they cover:
 ├── scripts/
 │   └── make_figures.py   draws docs/img/*.png from results/study.json only
 ├── docs/img/          README charts
-├── tests/             25 unittest cases
-└── INTERVIEW_NOTES.md design decisions, results and likely questions
+└── tests/             25 unittest cases
 ```
 
 ## What this isn't / limits
@@ -223,9 +222,3 @@ What they cover:
 - **Not a trading strategy.** The Sharpe ratios are on synthetic returns with a toy cost model: linear 5 bps per unit traded, no impact, borrow or capacity limits.
 - **Permutation resolution.** p-values bottom out at 1/10,000, and the 20-day test only has 25 blocks to shuffle. BY and Bonferroni are partly limited by that floor.
 - **"True" includes weak formulas.** Some of the 53 (e.g. `delta(x0, 1)`) have tiny population IC. That's part of why power tops out where it does.
-
-## More
-
-The design decisions, the reasoning behind each one, and the questions I'd expect about this project are in [INTERVIEW_NOTES.md](INTERVIEW_NOTES.md).
-
-Built as a personal project with AI pair-programming help.
