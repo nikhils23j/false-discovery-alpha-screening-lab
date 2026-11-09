@@ -1,7 +1,7 @@
 """Monte-Carlo study: empirical FDR / FWER / power of screening procedures.
 
     python -m alpha_screen.study --profile full --workers 8 --output results/study.json
-    python -m alpha_screen.study --profile quick --output /tmp/quick.json   # ~1 minute smoke run
+    python -m alpha_screen.study --profile quick --output results/quick.json   # ~1 minute smoke run
 """
 
 from __future__ import annotations

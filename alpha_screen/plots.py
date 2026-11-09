@@ -1,6 +1,7 @@
 """Render PNG figures from results/study.json (needs matplotlib).
 
-    python -m alpha_screen.plots --input results/study.json --outdir results
+    python -m alpha_screen.plots --input results/study.json --outdir docs/img
+    python scripts/make_figures.py          # same thing, callable from anywhere
 """
 
 from __future__ import annotations
@@ -53,7 +54,7 @@ def fdr_power(study: dict, out: Path) -> None:
         ax.set_title(title, fontsize=11, color=INK, loc="left")
         ax.set_xlim(0, 1.05)
     axes[0].axvline(study["q"], color=MUTED, linestyle="--", linewidth=1)
-    axes[0].text(study["q"] + 0.01, -0.45, "q = 0.05", fontsize=8.5, color=MUTED)
+    axes[0].text(study["q"] + 0.01, len(names) - 1.5, f"q = {study['q']:g}", fontsize=8.5, color=MUTED)
     axes[0].set_yticks(range(len(names)), [LABELS[n] for n in names], fontsize=9, color=INK)
     n = study["scenarios"]["main"]["trials"]
     fig.suptitle(f"{n} simulated markets, {study['candidate_family']['m']} candidate formulas each (dots: mean, bars: 95% CI)",
@@ -103,7 +104,9 @@ def calibration(study: dict, out: Path) -> None:
             ax.bar(x, e["mean"], width - 0.04, color=color, label=lab if i == 0 else None)
             ax.plot([x, x], e["ci95"], color=INK, linewidth=1.2)
             ax.text(x, e["ci95"][1] + 0.004, f"{e['mean']:.3f}", ha="center", fontsize=8.5, color=INK)
-    ax.axhline(0.05, color=MUTED, linestyle="--", linewidth=1)
+    ax.axhline(study["q"], color=MUTED, linestyle="--", linewidth=1)
+    top = max(sc[s]["null_rejection_rate_at_05"][k]["ci95"][1] for s, _, _ in scen for k in keys)
+    ax.set_ylim(0, top * 1.12)
     ax.set_xticks(range(len(keys)), [labels[k] for k in keys], fontsize=9, color=INK)
     ax.set_ylabel("share of truly-null formulas with p <= 0.05", fontsize=9, color=MUTED)
     ax.set_title("Are the p-values honest? (should be 0.05)", fontsize=11, color=INK, loc="left")
@@ -123,7 +126,8 @@ def showcase(study: dict, out: Path) -> None:
                    s=22, color=color, alpha=0.85, edgecolors="white", linewidths=0.6, label=lab)
     sel = [c for c in cands if "bh_block_perm" in c["selected_by"]]
     ax.scatter([abs(c["in_sample_annual_sharpe"]) for c in sel], [c["holdout_directional_ic"] for c in sel],
-               s=70, facecolors="none", edgecolors=ORANGE, linewidths=1.5, label="selected by BH (q=0.05)")
+               s=70, facecolors="none", edgecolors=ORANGE, linewidths=1.5,
+               label=f"selected by BH + 20-day block perm. (q={study['q']:g}): {len(sel)}")
     ax.axhline(0, color=MUTED, linewidth=0.8)
     ax.set_xlabel("|in-sample annualised Sharpe| (training window)", fontsize=9, color=MUTED)
     ax.set_ylabel("holdout mean rank IC (sign fixed in training)", fontsize=9, color=MUTED)
@@ -138,7 +142,7 @@ def showcase(study: dict, out: Path) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", type=Path, default=Path("results/study.json"))
-    ap.add_argument("--outdir", type=Path, default=Path("results"))
+    ap.add_argument("--outdir", type=Path, default=Path("docs/img"))
     args = ap.parse_args()
     study = json.loads(args.input.read_text())
     args.outdir.mkdir(parents=True, exist_ok=True)
